@@ -3,11 +3,11 @@
 이 문서는 NHN Cloud의 Cloud Functions 서비스에서 Ruby를 사용하여 함수를 개발하는 방법을 상세히 설명합니다.
 
 ## 템플릿 정보
-| 항목         | 값                  |
-|--------------|---------------------|
-| **지원 버전** | 2.6.1              |
-| **파일명**    | parse.rb           |
-| **Entry Point** | handler          |
+| 항목              | 값        |
+|-----------------|----------|
+| **지원 버전**       | 3.4.5    |
+| **파일명**         | parse.rb |
+| **Entry Point** | handler  |
 
 ## 기본 템플릿
 
@@ -81,38 +81,6 @@ ruby.zip
 └── Gemfile.lock
 ```
 
-#### Gemfile
-```Gemfile
-# frozen_string_literal: true
-
-source "https://rubygems.org"
-
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
-
-gem "nokogiri", ">= 1.12.5"
-```
-
-#### Gemfile.lock
-```Gemfile.lock
-GEM
-  remote: https://rubygems.org/
-  specs:
-    mini_portile2 (2.6.1)
-    nokogiri (1.12.5)
-      mini_portile2 (~> 2.6.1)
-      racc (~> 1.4)
-    racc (1.5.2)
-
-PLATFORMS
-  ruby
-
-DEPENDENCIES
-  nokogiri (>= 1.12.5)
-
-BUNDLED WITH
-  1.17.3
-```
-
 ### 로컬 개발 과정
 
 #### 1. 압축 해제
@@ -174,14 +142,15 @@ end
 ```bash
 zip my-function.zip parse.rb Gemfile Gemfile.lock
 ```
-**참고**: `Gemfile.lock` 파일은 `bundle install`을 실행하여 생성되며, 의존성의 정확한 버전을 고정하는 역할을 하므로 함께 압축하는 것을 권장합니다.
+**참고**: `Gemfile.lock` 파일은 배포 단계에서 자동으로 생성되지만, 의존성의 정확한 버전을 미리 확인하거나 고정하고 싶은 경우 로컬에서 `bundle install`을 실행하여 직접 생성한 후 함께 압축할 수 있습니다. `Gemfile.lock` 파일이 포함된 경우 해당 파일에 명시된 버전을 사용하여 빌드됩니다.
 
 ### Cloud Functions 콘솔에서 업로드
 - 함수 생성 또는 수정 시, **사용자 로컬 환경** 방식을 선택합니다.
 - **파일 선택**을 클릭하여 생성한 `my-function.zip` 파일을 업로드합니다.
 
 ### 업로드 시 주의사항
-- **업로드 파일**: `*.rb`, `Gemfile`, `Gemfile.lock`이 포함된 **ZIP 파일**을 업로드해야 합니다.
+- **업로드 파일**: `*.rb`, `Gemfile`이 포함된 **ZIP 파일**을 업로드해야 합니다.
+  - `Gemfile.lock` 파일은 선택 사항입니다. 포함된 경우 해당 파일에 명시된 버전으로 빌드되며, 없을 경우 배포 단계에서 자동으로 생성됩니다.
 - **ZIP 파일 구조**: ZIP 파일의 루트에 파일들이 위치해야 합니다.
 - **파일 크기**: ZIP 파일 크기는 100MiB 이하로 제한됩니다.
 
@@ -256,8 +225,8 @@ end
 
 source "https://rubygems.org"
 
-gem "nokogiri", ">= 1.12.5" # XML/HTML 파서
-gem "httparty", "~> 0.20.0" # HTTP 클라이언트
+gem "nokogiri", "~> 1.18" # XML/HTML 파서
+gem "httparty", "~> 0.23" # HTTP 클라이언트
 ```
 
 ### 외부 API 호출 예시
@@ -309,5 +278,5 @@ Entry Point는 함수명을 사용합니다.
 - Entry Point: `handler`
 
 ### 주의사항
-- **Bundler 버전**: `Gemfile.lock` 생성 시 Bundler 1.x 버전(1.17.3 이상) 사용을 권장합니다.
+- **Bundler 버전**: `Gemfile.lock` 생성 시 Bundler 2.6.2 이상 버전 사용을 권장합니다.
 - **ActiveSupport 등 일부 Gem 호환성**: `ActiveSupport`와 같이 C 확장(C extension)에 의존하거나 내부 구조가 복잡한 일부 Gem은 현재 Cloud Functions 환경과 호환성 문제가 발생할 수 있습니다. `activesupport` Gem은 내부적으로 `zeitwerk` Gem에 의존하며, 이 Gem이 파일 시스템을 탐색하는 방식이 실행 환경과 충돌하여 정상적으로 동작하지 않을 수 있습니다. 따라서 가급적 표준 라이브러리나 외부 의존성이 적은 Gem을 사용하는 것을 권장합니다.

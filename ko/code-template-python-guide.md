@@ -3,10 +3,10 @@
 이 문서는 NHN Cloud의 Cloud Functions 서비스에서 Python을 사용하여 함수를 개발하는 방법을 상세히 설명합니다.
 
 ## 템플릿 정보
-| 항목         | 값                  |
-|--------------|---------------------|
-| **지원 버전** | 3.11               |
-| **파일명**    | user.py            |
+| 항목              | 값                |
+|-----------------|------------------|
+| **지원 버전**       | 3.11, 3.12, 3.13 |
+| **파일명**         | user.py          |
 | **Entry Point** | user.main        |
 
 ## 기본 템플릿
@@ -113,6 +113,7 @@ cd my-function
 # user.py - 간단한 수정 예시
 from flask import request
 import json
+from datetime import datetime
 
 def main():
     try:

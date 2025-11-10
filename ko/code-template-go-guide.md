@@ -3,11 +3,11 @@
 이 문서는 NHN Cloud의 Cloud Functions 서비스에서 Go를 사용하여 함수를 개발하는 방법을 상세히 설명합니다.
 
 ## 템플릿 정보
-| 항목         | 값                  |
-|--------------|---------------------|
-| **지원 버전** | 1.22, 1.23         |
-| **파일명**    | functions.go       |
-| **Entry Point** | Handler          |
+| 항목              | 값                                        |
+|-----------------|------------------------------------------|
+| **지원 버전**       | 1.22(사용중단 예정), 1.23(사용중단 예정), 1.24, 1.25 |
+| **파일명**         | functions.go                             |
+| **Entry Point** | Handler                                  |
 
 ## 기본 템플릿
 
@@ -362,11 +362,11 @@ func getOrDefault(value, defaultValue string) string {
 ```go
 module example.com/myfunction
 
-go 1.22
+go 1.25
 
 require (
-    github.com/google/uuid v1.3.0
-    github.com/gorilla/mux v1.8.0
+    github.com/google/uuid v1.6.0
+    github.com/gorilla/mux v1.8.1
 )
 ```
 
@@ -567,4 +567,15 @@ Entry Point 설정:
 ## 주의사항
 
 ### Go 버전
-Go 1.22 또는 1.23 버전을 사용합니다.
+현재 지원되는 Go 버전은 **1.24**와 **1.25**입니다.
+
+**지원 중단 예정**: Go 1.22와 1.23은 지원이 중단되어 사용이 제한될 예정입니다.
+
+#### Go 버전 지원 정책
+Cloud Functions는 Go의 공식 릴리즈 정책을 따릅니다. Go는 연 2회(1월, 7월) 새로운 메이저 버전을 릴리즈하며, 각 버전은 최신 2개 메이저 버전까지만 지원됩니다.
+
+**예시**:
+- Go 1.24가 릴리즈되면 Go 1.22는 지원 종료
+- Go 1.25가 릴리즈되면 Go 1.23은 지원 종료
+
+**권장사항**: 최신 지원 버전(1.24 또는 1.25)을 사용하여 보안 패치와 버그 수정을 계속 받을 수 있도록 합니다.
