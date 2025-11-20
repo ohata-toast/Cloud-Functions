@@ -213,7 +213,7 @@ curl -X POST "https://{stageurl}/{경로}" \
 
 ### API Gateway와 함께 사용하기
 
-API Gateway 트리거를 생성하면, API Gateway 콘솔에서 추가 설정을 할 수 있습니다:
+API Gateway 트리거를 생성하면 API Gateway 콘솔에서 추가 설정을 할 수 있습니다.
 
 자세한 내용은 [API Gateway 가이드](https://docs.nhncloud.com/ko/Application%20Service/API%20Gateway/ko/overview/)를 참고하십시오.
 
