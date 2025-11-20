@@ -224,7 +224,7 @@ API Gateway 트리거를 생성하면 API Gateway 콘솔에서 추가 설정을 
 ![trigger-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-11-25/trigger-guide-03.png)
 
 1. Cloud Functions 콘솔에서 함수를 선택합니다.
-2. 트리거 탭으로 이동합니다.
+2. **트리거** 탭으로 이동합니다.
 3. 삭제할 트리거를 선택합니다. (여러 개 선택 가능)
 4. 트리거 삭제 버튼을 클릭합니다.
 5. 확인 대화상자에서 삭제 버튼을 클릭합니다.
