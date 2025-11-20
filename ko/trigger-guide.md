@@ -160,7 +160,7 @@ API Gateway 트리거는 동일 프로젝트의 API Gateway 서비스를 활용�
 ![trigger-guide-04](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-11-25/trigger-guide-04.png)
 
 1. Cloud Functions 콘솔에서 함수를 선택합니다.
-2. 트리거 탭으로 이동합니다.
+2. **트리거** 탭으로 이동합니다.
 3. 트리거 생성 버튼을 클릭합니다.
 4. 트리거 유형에서 API Gateway를 선택합니다.
 5. 사용할 경로를 입력합니다.
