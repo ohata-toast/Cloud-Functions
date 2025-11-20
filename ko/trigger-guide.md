@@ -64,7 +64,7 @@ Timer 트리거는 지정된 시간 또는 주기에 따라 자동으로 함수�
 ![trigger-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-11-25/trigger-guide-01.png)
 
 1. Cloud Functions 콘솔에서 함수를 선택합니다.
-2. 트리거 탭으로 이동합니다.
+2. **트리거** 탭으로 이동합니다.
 3. 트리거 생성 버튼을 클릭합니다.
 4. 트리거 유형에서 Timer를 선택합니다.
 5. **Cron 표현식**을 입력합니다.
