@@ -205,7 +205,7 @@ curl -X POST "https://{stageurl}/{경로}" \
 ![trigger-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-11-25/trigger-guide-05.png)
 
 1. Cloud Functions 콘솔에서 함수를 선택합니다.
-2. 트리거 탭으로 이동합니다.
+2. **트리거** 탭으로 이동합니다.
 3. 수정할 API Gateway 트리거를 선택합니다.
 4. 트리거 수정 버튼을 클릭합니다.
 5. 경로를 변경합니다.
