@@ -26,26 +26,36 @@
 - 함수가 수행될 때만 인스턴스가 생성되어 리소스를 사용합니다.
 - 일정 기간 함수가 수행되지 않으면 인스턴스는 사라지고 리소스 사용량은 0이 됩니다.
 - 함수 수행 요청량이 많지 않고 이벤트 발생 시에만 수행하고 싶을 때 사용합니다.
+
 ![overview-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-08-26/NHN%20Cloud_Guide%20overview_CloudFunctions_1_ko.png)
+
 #### New Deployment
 - 함수를 생성하면 바로 인스턴스가 생성되어 일정량의 리소스를 계속 사용합니다.
 - 빠른 응답을 위해 인스턴스 생성을 유지합니다.
 - 함수 수행 요청량이 많고 빠른 응답이 필요한 경우 사용합니다.
+
 ![overview-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-08-26/NHN%20Cloud_Guide%20overview_CloudFunctions_2_ko.png)
 
 ### 지원 언어
-| 언어     | 버전       |
-|----------|------------|
-| NodeJS   | 20.16.0    |
-|          | 22.5.0     |
-|          | Debian(20.16.0)     |
-| Python   | 3.11       |
-| Go       | 1.22       |
-|          | 1.23       |
-| Java     | 17         |
-|          | 21         |
-| Ruby     | 2.6.1      |
-| .NET     | 7          |
+
+| 언어     | 버전              |
+|--------|-----------------|
+| NodeJS | 20.16.0         |
+|        | 22.5.0          |
+|        | Debian(20.16.0) |
+| Python | 3.11            |
+|        | 3.12            |
+|        | 3.13            |
+| Go     | 1.22(사용 중단 예정)   |
+|        | 1.23(사용 중단 예정)   |
+|        | 1.24            |
+|        | 1.25            |
+| Java   | 17              |
+|        | 21              |
+| Ruby   | 2.6.1(사용 중단)    |
+|        | 3.4.5           |
+| .NET   | 7(사용 중단)        |
+|        | 8               |
 
 ### Trigger
 - HTTP Trigger
