@@ -180,8 +180,10 @@
 - ビルド状態項目からビルドログ確認ボタンをクリックして,ビルドログを確認できます。
 - ユーザーが作成したコードをZIPファイル形式でダウンロードできます。
 ### 関数トリガー管理
-関数を実行するためのトリガーを管理できます。 HTTPトリガーは基本提供されます。
-
+- 関数を実行できるトリガーを管理できます。
+- HTTPトリガーは関数の作成時にデフォルトで提供されます。
+    - 有効化/無効化により、使用するかどうかを設定できます。
+    
 ![console-guid-12](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-11-25/console-guide-jp-10.png)
 
 - 指定されたHTTPトリガーを使用して作成した関数を実行できます。
@@ -191,11 +193,12 @@
 #### トリガー作成/修正
 - Timer
     - Value: Cron文字列で周期を入力します。
+- API Gateway
+    - API Gatewayサービスを利用してHTTPエンドポイントを追加できます。
+        
 #### トリガー削除
 - 複数のトリガーを選択して削除できます。デフォルトのトリガーであるHTTPトリガーは削除できません。
 
-> **[参考]**
-> <br>現在はTimerトリガーのみをサポートしています。
 ### 関数モニタリング
 ![console-guide-06](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-11-25/console-guide-jp-11.png)
 - 関数の使用量を確認できます。

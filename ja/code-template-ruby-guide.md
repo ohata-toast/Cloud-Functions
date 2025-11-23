@@ -3,11 +3,11 @@
 このドキュメントでは、NHN CloudのCloud FunctionsサービスでRubyを使用して関数を開発する方法を詳しく説明します。
 
 ## テンプレート情報
-| 項目       | 値                |
-|--------------|---------------------|
-| **サポートバージョン** | 2.6.1              |
-| **ファイル名**    | parse.rb           |
-| **Entry Point** | handler          |
+| 項目             | 値       |
+|-----------------|----------|
+| **サポートバージョン**       | 3.4.5    |
+| **ファイル名**         | parse.rb |
+| **Entry Point** | handler  |
 
 ## 基本テンプレート
 
@@ -77,40 +77,7 @@ Cloud Functionsが提供するRubyテンプレートをダウンロードし、�
 ```
 ruby.zip
 ├── parse.rb
-├── Gemfile
-└── Gemfile.lock
-```
-
-#### Gemfile
-```Gemfile
-# frozen_string_literal: true
-
-source "https://rubygems.org"
-
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
-
-gem "nokogiri", ">= 1.12.5"
-```
-
-#### Gemfile.lock
-```Gemfile.lock
-GEM
-  remote: https://rubygems.org/
-  specs:
-    mini_portile2 (2.6.1)
-    nokogiri (1.12.5)
-      mini_portile2 (~> 2.6.1)
-      racc (~> 1.4)
-    racc (1.5.2)
-
-PLATFORMS
-  ruby
-
-DEPENDENCIES
-  nokogiri (>= 1.12.5)
-
-BUNDLED WITH
-  1.17.3
+└── Gemfile
 ```
 
 ### ローカルでの開発プロセス
@@ -174,14 +141,15 @@ end
 ```bash
 zip my-function.zip parse.rb Gemfile Gemfile.lock
 ```
-**参考**: `Gemfile.lock`ファイルは`bundle install`を実行することで生成され、依存関係の正確なバージョンを固定する役割を持つため、一緒に圧縮することを推奨します。
+**参考**: `Gemfile.lock`ファイルはデプロイ段階で自動的に生成されますが、依存関係の正確なバージョンを事前に確認または固定したい場合は、ローカルで`bundle install`を実行して直接生成した後、一緒に圧縮できます。`Gemfile.lock`ファイルが含まれている場合、そのファイルに明記されたバージョンを使用してビルドされます。
 
 ### Cloud Functionsコンソールでのアップロード
 - 関数を作成または修正する際に、**ユーザーローカル環境**方式を選択します。
 - **ファイルを選択**をクリックし、作成した`my-function.zip`ファイルをアップロードします。
 
 ### アップロード時の注意事項
-- **アップロードファイル**: `*.rb`、`Gemfile`、`Gemfile.lock`が含まれた**ZIPファイル**をアップロードする必要があります。
+- **アップロードファイル**: `*.rb`、`Gemfile`が含まれた**ZIPファイル**をアップロードする必要があります。
+  - `Gemfile.lock`ファイルは任意です。含まれている場合はそのファイルに明記されたバージョンでビルドされ、ない場合はデプロイ段階で自動的に生成されます。
 - **ZIPファイルの構造**: ZIPファイルのルートに各ファイルを配置する必要があります。
 - **ファイルサイズ**: ZIPファイルのサイズは100MiB以下に制限されます。
 
@@ -256,8 +224,8 @@ end
 
 source "https://rubygems.org"
 
-gem "nokogiri", ">= 1.12.5" # XML/HTMLパーサー
-gem "httparty", "~> 0.20.0" # HTTPクライアント
+gem "nokogiri", "~> 1.18" # XML/HTMLパーサー
+gem "httparty", "~> 0.23" # HTTPクライアント
 ```
 
 ### 外部API呼び出しの例
@@ -309,5 +277,5 @@ end
 - Entry Point: `handler`
 
 ### 注意事項
-- **Bundlerのバージョン**: `Gemfile.lock`を作成する際には、Bundler 1.x系(1.17.3以上)の使用を推奨します。
+- **Bundlerのバージョン**: `Gemfile.lock`を作成する際には、Bundler 2.6.2以上のバージョンの使用を推奨します。
 - **ActiveSupportなど一部のGemの互換性**: `ActiveSupport`のようにC拡張(C extension)に依存したり、内部構造が複雑だったりする一部のGemは、現在のCloud Functions環境と互換性の問題が発生する可能性があります。`activesupport` Gemは内部で`zeitwerk` Gemに依存しており、このGemがファイルシステムを探索する方法が実行環境と競合し、正常に動作しない場合があります。そのため、できるだけ標準ライブラリや外部依存の少ないGemを使用することを推奨します。
