@@ -3,10 +3,10 @@
 This document details how to develop functions by using .NET from NHN Cloud's Cloud Functions service.
 
 ## Template information
-| Item         | Value                  |
-|--------------|---------------------|
-| **Supported version** | 7                  |
-| **File name**    | func.cs            |
+| Item              | Value                  |
+|-----------------|---------|
+| **Supported version**       | 8       |
+| **File name**         | func.cs |
 | **Entry point** | func             |
 
 ## Basic template
@@ -278,7 +278,7 @@ Use the `nuget.txt` file to manage dependencies (NuGet packages). Write the requ
 
 ```
 # nuget.txt
-Microsoft.Extensions.Configuration:2.2.0
+Microsoft.Extensions.Configuration:8.0.0
 ```
 
 ### Example of configuration management
@@ -326,7 +326,7 @@ public class NhnFunction
             var responseData = new Dictionary<string, object>
             {
                 { "message", "Microsoft Configuration Demo" },
-                { "package", "Microsoft.Extensions.Configuration:2.2.0" },
+                { "package", "Microsoft.Extensions.Configuration:8.0.0" },
                 { "results", new Dictionary<string, object>
                     {
                         { "databaseHost", dbHost },

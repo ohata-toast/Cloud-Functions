@@ -3,10 +3,10 @@
 このドキュメントでは、NHN CloudのCloud FunctionsサービスでPythonを使用して関数を開発する方法を詳しく説明します。
 
 ## テンプレート情報
-| 項目       | 値                |
-|--------------|---------------------|
-| **サポートバージョン** | 3.11               |
-| **ファイル名**    | user.py            |
+| 項目             | 値               |
+|-----------------|------------------|
+| **サポートバージョン**       | 3.11, 3.12, 3.13 |
+| **ファイル名**         | user.py          |
 | **Entry Point** | user.main        |
 
 ## 基本テンプレート
@@ -113,6 +113,7 @@ cd my-function
 # user.py - 簡単な修正例
 from flask import request
 import json
+from datetime import datetime
 
 def main():
     try:

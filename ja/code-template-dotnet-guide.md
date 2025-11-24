@@ -4,8 +4,8 @@
 
 ## テンプレート情報
 | 項目       | 値                |
-|--------------|---------------------|
-| **サポートバージョン** | 7                  |
+|-----------------|---------|
+| **サポートバージョン** | 8                  |
 | **ファイル名**    | func.cs            |
 | **Entry Point** | func             |
 
@@ -278,7 +278,7 @@ public class NhnFunction
 
 ```
 # nuget.txt
-Microsoft.Extensions.Configuration:2.2.0
+Microsoft.Extensions.Configuration:8.0.0
 ```
 
 ### 設定管理の例
@@ -326,7 +326,7 @@ public class NhnFunction
             var responseData = new Dictionary<string, object>
             {
                 { "message", "Microsoft Configuration Demo" },
-                { "package", "Microsoft.Extensions.Configuration:2.2.0" },
+                { "package", "Microsoft.Extensions.Configuration:8.0.0" },
                 { "results", new Dictionary<string, object>
                     {
                         { "databaseHost", dbHost },
