@@ -3,11 +3,11 @@
 This document details how to develop functions by using Go from NHN Cloud's Cloud Functions service.
 
 ## Template information
-| Item         | Value                  |
-|--------------|---------------------|
-| **Supported version** | 1.22, 1.23         |
-| **File name**    | functions.go       |
-| **Entry Point** | Handler          |
+| Item              | Value                                        |
+|-----------------|------------------------------------------|
+| **Supported version**       | 1.22 (scheduled for deprecation), 1.23 (scheduled for deprecation), 1.24, 1.25 |
+| **File name**    | functions.go                               |
+| **Entry Point** | Handler                                  |
 
 ## Basic template
 
@@ -362,11 +362,11 @@ Write `go.mod` to manage dependencies.
 ```go
 module example.com/myfunction
 
-go 1.22
+go 1.25
 
 require (
-    github.com/google/uuid v1.3.0
-    github.com/gorilla/mux v1.8.0
+    github.com/google/uuid v1.6.0
+    github.com/gorilla/mux v1.8.1
 )
 ```
 
@@ -567,4 +567,15 @@ Entry Point configuration:
 ## Caution
 
 ### Go version
-Use version Go 1.22 or 1.23.
+Currently, supported Go versions are **1.24** and **1.25**.
+
+**Deprecation Planned**: Go 1.22 and 1.23 are deprecated, and their use will be restricted.
+
+#### Go Version Support Policy
+Cloud Functions follows Go's official release policy. Go releases new major versions twice a year (January and July), and each version is supported only up to the latest two major versions.
+
+**Example**:
+- Go 1.22 will no longer be supported when Go 1.24 is released.
+- Go 1.23 will no longer be supported when Go 1.25 is released.
+
+**Recommendation**: use the latest supported version (1.24 or 1.25) to continue receiving security patches and bug fixes.
