@@ -26,26 +26,35 @@
 - 関数が実行される際にのみインスタンスが作成され、リソースを使用します。
 - 一定期間関数が実行されない場合、インスタンスは消滅し、リソース使用量は0になります。
 - 関数実行リクエスト量が少なく、イベント発生時のみ実行したい場合に使用します。
+
 ![overview-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-08-26/NHN%20Cloud_Guide%20overview_CloudFunctions_1_ja.png)
+
 #### New Deployment
 - 関数を作成すると、すぐにインスタンスが作成され、一定量のリソースを継続して使用します。
 - 高速な応答のためにインスタンス作成を維持します。
 - 関数実行リクエストが多く、迅速な応答が必要な場合に使用します。
+
 ![overview-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-08-26/NHN%20Cloud_Guide%20overview_CloudFunctions_2_ja.png)
 
 ### サポート言語
-| 言語   | バージョン     |
-|----------|------------|
-| NodeJS   | 20.16.0    |
-|          | 22.5.0     |
-|          | Debian(20.16.0)     |
-| Python   | 3.11       |
-| Go       | 1.22       |
-|          | 1.23       |
-| Java     | 17         |
-|          | 21         |
-| Ruby     | 2.6.1      |
-| .NET     | 7          |
+| 言語    | バージョン             |
+|--------|-----------------|
+| NodeJS | 20.16.0         |
+|        | 22.5.0          |
+|        | Debian(20.16.0) |
+| Python | 3.11            |
+|        | 3.12            |
+|        | 3.13            |
+| Go     | 1.22(使用中止予定)   |
+|        | 1.23(使用中止予定)   |
+|        | 1.24            |
+|        | 1.25            |
+| Java   | 17              |
+|        | 21              |
+| Ruby   | 2.6.1(使用中止)    |
+|        | 3.4.5           |
+| .NET   | 7(使用中止)        |
+|        | 8               |
 
 ### Trigger
 - HTTP Trigger

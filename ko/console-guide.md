@@ -180,7 +180,9 @@
 - 빌드 상태 항목에서 빌드 로그 확인 버튼을 통해 빌드 로그를 확인할 수 있습니다.
 - 사용자가 작성한 코드를 ZIP 파일 형태로 다운로드할 수 있습니다.
 ### 함수 트리거 관리
-함수를 수행할 수 있는 트리거를 관리할 수 있습니다. HTTP 트리거는 기본 제공됩니다.
+- 함수를 실행할 수 있는 트리거를 관리할 수 있습니다.
+- HTTP 트리거는 함수 생성 시 기본으로 제공됩니다.
+    - 활성화/비활성화를 통해 사용 여부를 설정할 수 있습니다.
 
 ![console-guid-12](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-07-29/console-guide-12.png)
 
@@ -191,11 +193,12 @@
 #### 트리거 생성/수정
 - Timer
     - Value: Cron 문자열로 주기를 입력합니다.
+- API Gateway
+    - API Gateway 서비스를 이용하여 HTTP Endpoint를 추가할 수 있습니다.
+
 #### 트리거 삭제
 - 여러 건의 트리거를 선택하여 삭제할 수 있습니다. 기본 트리거인 HTTP 트리거는 삭제할 수 없습니다.
 
-> **[참고]**
-> <br>현재는 Timer 트리거만 지원합니다.
 ### 함수 모니터링
 ![console-guide-06](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-07-29/console-guide-06.png)
 - 함수의 사용량을 확인할 수 있습니다.

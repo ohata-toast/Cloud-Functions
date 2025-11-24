@@ -3,11 +3,11 @@
 이 문서는 NHN Cloud의 Cloud Functions 서비스에서 .NET을 사용하여 함수를 개발하는 방법을 상세히 설명합니다.
 
 ## 템플릿 정보
-| 항목         | 값                  |
-|--------------|---------------------|
-| **지원 버전** | 7                  |
-| **파일명**    | func.cs            |
-| **Entry Point** | func             |
+| 항목              | 값       |
+|-----------------|---------|
+| **지원 버전**       | 8       |
+| **파일명**         | func.cs |
+| **Entry Point** | func    |
 
 ## 기본 템플릿
 
@@ -278,7 +278,7 @@ public class NhnFunction
 
 ```
 # nuget.txt
-Microsoft.Extensions.Configuration:2.2.0
+Microsoft.Extensions.Configuration:8.0.0
 ```
 
 ### 설정 관리 예시
@@ -326,7 +326,7 @@ public class NhnFunction
             var responseData = new Dictionary<string, object>
             {
                 { "message", "Microsoft Configuration Demo" },
-                { "package", "Microsoft.Extensions.Configuration:2.2.0" },
+                { "package", "Microsoft.Extensions.Configuration:8.0.0" },
                 { "results", new Dictionary<string, object>
                     {
                         { "databaseHost", dbHost },

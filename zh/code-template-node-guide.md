@@ -3,11 +3,11 @@
 This document details how to develop functions by using Node.js from NHN Cloud's Cloud Functions service.
 
 ## Template information
-| Item         | Value                  |
-|--------------|---------------------|
-| **Supported version** | 20.16.0, 22.5.0   |
-| **File name**    | hello.js           |
-| **Entry Point** | hello            |
+| Item           | Value                  |
+|-----------------|-----------------|
+| **Supported version**       | 20.16.0, 22.5.0 |
+| **File name**         | hello.js        |
+| **Entry Point** | hello           |
 
 ## Basic template
 ### Hello World example

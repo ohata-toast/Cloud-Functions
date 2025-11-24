@@ -3,10 +3,10 @@
 This document details how to develop functions by using Java from NHN Cloud's Cloud Functions service.
 
 ## Template information
-| Item         | Value                  |
-|--------------|---------------------|
-| **Supported version** | 17, 21             |
-| **File name**    | HelloWorld.java    |
+| Item               | Value                  |
+|-----------------|---------------------|
+| **Supported version**       | 17, 21             |
+| **File name**          | HelloWorld.java    |
 | **Entry Point** | example.HelloWorld |
 
 ## Basic template
