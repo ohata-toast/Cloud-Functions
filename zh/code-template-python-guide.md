@@ -3,10 +3,10 @@
 This document details how to develop functions by using Python from NHN Cloud's Cloud Functions service.
 
 ## Template information
-| Item         | Value                  |
-|--------------|---------------------|
-| **Supported version** | 3.11               |
-| **File name**    | user.py            |
+| Item              | Value                  |
+|-----------------|------------------|
+| **Supported version**       | 3.11, 3.12, 3.13 |
+| **File name**         | user.py            |
 | **Entry Point** | user.main        |
 
 ## Basic template
@@ -113,6 +113,7 @@ Modify `user.py` file with the logic you want.
 # user.py - Simple modification example
 from flask import request
 import json
+from datetime import datetime
 
 def main():
     try:

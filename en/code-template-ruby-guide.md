@@ -80,47 +80,6 @@ ruby.zip
 └── Gemfile
 ```
 
-#### Gemfile
-```Gemfile
-# frozen_string_literal: true
-
-source "https://rubygems.org"
-
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
-
-gem "nokogiri", ">= 1.12.5"
-gem "httparty", "~> 0.20.0"
-```
-
-#### Gemfile.lock
-```Gemfile.lock
-GEM
-  remote: https://rubygems.org/
-  specs:
-    httparty (0.20.0)
-      mime-types (~> 3.0)
-      multi_xml (>= 0.5.2)
-    mime-types (3.4.1)
-      mime-types-data (~> 3.2015)
-    mime-types-data (3.2023.0218.1)
-    mini_portile2 (2.6.1)
-    multi_xml (0.6.0)
-    nokogiri (1.12.5)
-      mini_portile2 (~> 2.6.1)
-      racc (~> 1.4)
-    racc (1.5.2)
-
-PLATFORMS
-  ruby
-
-DEPENDENCIES
-  httparty (~> 0.20.0)
-  nokogiri (>= 1.12.5)
-
-BUNDLED WITH
-  1.17.3
-```
-
 ### Local development process
 
 #### 1. Unzip
