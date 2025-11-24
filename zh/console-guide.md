@@ -180,7 +180,9 @@ Copy a function that is identical to an existing function. The name cannot be du
 - You can check the build log by clicking the “Check build log” button in the build status item.
 - You can download the code you wrote as a ZIP file.
 ### Manage function triggers
-You can manage triggers that can perform functions. HTTP triggers are built-in.
+You can manage triggers that can perform functions.
+- HTTP triggers are built-in when creating a function.
+    - You can set whether to use through the Enable/Disable features.
 
 ![console-guid-12](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-11-25/console-guide-en-10.png)
 
@@ -191,11 +193,12 @@ You can manage triggers that can perform functions. HTTP triggers are built-in.
 #### Create/edit triggers
 - Timer
     - Value: Enter the cycle as a Cron string.
+    - API Gateway
+    - You can add HTTP Endpoint by using the API Gateway service.
+
 #### Delete triggers
 - You can select multiple triggers to delete. You can't delete the HTTP trigger, which is the default trigger.
 
-> **[Note]**
-> <br>Currently, we only support Timer triggers.
 ### Monitor functions
 ![console-guide-06](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-11-25/console-guide-en-11.png)
 - You can check the usage of a function.
