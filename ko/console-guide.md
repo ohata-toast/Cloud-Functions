@@ -180,7 +180,7 @@
 - 로그 관리 항목에서 Log & Crash Search 버튼을 통해 Log & Crash Search 서비스로 이동하여 로그를 확인할 수 있습니다.
 
 ### 함수 버전 관리
-![console-guide-XX](이미지_URL_추가_필요)
+![console-guide-XX]()
 - 함수의 버전을 관리할 수 있습니다.
 - 생성된 모든 버전의 이력을 확인하고, 이전 버전으로 롤백할 수 있습니다.
 
