@@ -1,5 +1,11 @@
 ## Compute > Cloud Functions > Release Notes
 
+### January 27, 2026
+
+#### Added Features
+- Added function versioning
+    - Manage build packages by version and rollback to previous versions
+
 ### November 25, 2025
 
 #### Added Features

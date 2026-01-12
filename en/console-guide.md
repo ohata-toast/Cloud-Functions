@@ -5,7 +5,7 @@ This document describes how to create and manage functions in Cloud Functions co
 You can create, edit, delete, and copy functions.
 
 ### Create functions
-After setting up the function and writing the code, click the Create button to build the code and create the function.
+Configure the function, write your code, and build it. Then, click **Create** to deploy the function using the latest built package.
 
 ![console-guide-07](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-11-25/console-guide-en-01.png)
 ![console-guide-08](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-11-25/console-guide-en-02.png)
@@ -109,7 +109,7 @@ After setting up the function and writing the code, click the Create button to b
     <tr>
         <td>2.</td>
         <td>Entry Point</td>
-        <td>Specify the entry point for the function, such as function name <br>It is automatically completed to match the template in the runtime environment.<br>It must match the entry point in the source code that you wrote when you modified randomly.<br>If you entered it incorrectly, <strong>you cannot check it with deployment</strong>, <strong>but you can check it with with the log during testing</strong>.</td>
+        <td>Specify the entry point for the function, such as function name <br>It is automatically completed to match the template in the runtime environment.<br>It must match the entry point in the source code that you wrote when you modified randomly.<br>If you entered it incorrectly, <strong>you cannot check it with build</strong>, <strong>but you can check it with with the log during testing</strong>.</td>
     </tr>
     <tr>
         <td rowspan="3">Code</td>
@@ -124,8 +124,8 @@ After setting up the function and writing the code, click the Create button to b
     </tr>
     <tr>
         <td>5.</td>
-        <td>Deployment</td>
-        <td>Used to deploy user-written or uploaded code to verify that the build is normal.<br>Note: Functions are rebuilt with the latest updated source code at the time of creation, rather than using their distribution version.</td>
+        <td>Build</td>
+        <td>Build a package from the code you have written or uploaded.<br>The built packages are used for testing. When creating or updating a function, the latest built package is automatically integrated into the function version</td>
     </tr>
     <tr>
         <td rowspan="2">Test</td>
@@ -136,7 +136,7 @@ After setting up the function and writing the code, click the Create button to b
     <tr>
         <td>7.</td>
         <td>Test</td>
-        <td>Test the function by sending the JSON Body you created to the event. (This must be deployed first.) <br>You can verify function behavior with logs.<br>Call with the GET method.</td>
+        <td>Test the function by sending the JSON Body you created to the event. (This must be built first.) <br>You can verify function behavior with logs.<br>Call with the GET method.</td>
     </tr>
     <tr>
         <td></td>
@@ -148,10 +148,10 @@ After setting up the function and writing the code, click the Create button to b
 
 <br>
 
-> **[Note]** <br> The Deploy button is only used to check the build of the source code you created, and when you create a function, it will be rebuilt with the latest source code, not the build you tested with Deploy.
+> **[Note]** <br> Packages generated via Build button are linked to the function version during creation or updates. You must perform at least one build before creating a function
 
 ### Modify functions
-To modify the function settings and code of an existing function, use the Edit button to modify the function.
+To modify the function settings and code of an existing function, click **Modify** button to modify the function.
 #### Non-modifiable item
 - Name, runtime environment
     - You can edit everything except the item.
@@ -167,18 +167,82 @@ Select an existing function to delete it. You can delete multiple functions at o
 ![console-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-11-25/console-guide-en-07.png)
 Copy a function that is identical to an existing function. The name cannot be duplicated, so you can rewrite the name before copying.
 - Triggers are not copied. (HTTP triggers are provided by default).
+- Only the currently applied version will be copied.
 
 ## About functions
 ### List of functions
 ![console-guide-01](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-11-25/console-guide-en-08.png)
 - You can see a list of functions that users have created.
-- The build status is automatically updated to confirm that the function is available.
+- Build status shows the build status of the current version.
 ### Basic information of functions
 ![console-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-11-25/console-guide-en-09.png)
 - You can see basic information about the function.
-- You can check the logs by going to Log & Crash Search service via the Log & Crash Search button in the log management topic.
-- You can check the build log by clicking the “Check build log” button in the build status item.
-- You can download the code you wrote as a ZIP file.
+- Click Log & Crash Search in the Log Management section to view your logs in the Log & Crash Search service.
+
+### Function versioning
+![console-guide-XX]()
+- You can manage function versions.
+- You can view version history and rollback to any previous version.
+
+#### Versioning overview
+Build your code by clicking **Build** in the function creation or modification screen to generate a package.
+- When you create or update a function, the latest built package is integrated into the function version.
+- Each version is managed independently, allowing you to apply a tested version directly to your function.
+- At least one build is required to enable function creation.
+
+#### Version information
+<table class="it">
+    <tr>
+        <th>No.</th>
+        <th>Item</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>1.</td>
+        <td>Version List</td>
+        <td>You can check the full version history of the function.<br>This list displays information such as the version name, runtime, source code, and build status.</td>
+    </tr>
+    <tr>
+        <td>2.</td>
+        <td>Currently applied version</td>
+        <td>It diplays the version currently applied to the function.</td>
+    </tr>
+    <tr>
+        <td>3.</td>
+        <td>Download source code</td>
+        <td>You can download the source code of the selected version as a ZIP file.</td>
+    </tr>
+    <tr>
+        <td>4.</td>
+        <td>Check logs</td>
+        <td>You can check the selected version's build logs.<br>This is the same as the feature to check build logs in the Basic Information tab.</td>
+    </tr>
+</table>
+
+#### Deploy versions
+- Select a version from the list and click **Deploy Version** to update the function to the version.
+- The currently applied version cannot be selected for deployment.
+- Only one version can be deployed at a time; multiple selection is not supported.
+- Versions with a failed build status can still be deployed.
+
+> **[Note]**
+> <br>A confirmation popup will appear upon deployment. Once the deployment is successful, the version list will refresh automatically.
+
+#### Delete versions
+- To delete a version, select it from the list and click **Delete Version**.
+- The currently applied version cannot be deleted.
+- You can select and delete multiple versions at once.
+- Deleting a version also removes its associated source code.
+
+> **[Note]**
+> <br>A confirmation popup will appear when deleting a version. Please note that deleted versions cannot be recovered.
+
+#### Constraints
+- Canceling function creation or modification will prevent the built package from being integrated into a function version.
+- Deleting a function will permanently remove all integrated versions.
+- When copying a function, only the currently active version is copied. The full version history will not be copied.
+- While multiple runtimes are available during function creation, you can only build using the initially selected runtime when modifying the function.
+
 ### Manage function triggers
 You can manage triggers that can perform functions.
 - HTTP triggers are built-in when creating a function.
