@@ -5,7 +5,7 @@
 함수를 생성, 수정, 삭제, 복사할 수 있습니다.
 
 ### 함수 생성
-함수 설정을 하고 코드를 작성하여 빌드한 뒤 생성 버튼을 클릭하면 마지막 빌드한 패키지로 함수가 생성됩니다.
+함수 설정을 하고 코드를 작성하여 빌드한 뒤 **생성** 버튼을 클릭하면 마지막 빌드한 패키지로 함수가 생성됩니다.
 
 ![console-guide-07](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-07-29/console-guide-07.png)
 ![console-guide-08](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-07-29/console-guide-08.png)
