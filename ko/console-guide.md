@@ -177,7 +177,7 @@
 ### 함수 기본 정보
 ![console-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_cloud_functions/2025-07-29/console-guide-02.png)
 - 함수의 기본 정보를 확인할 수 있습니다.
-- 로그 관리 항목에서 Log & Crash Search 버튼을 통해 Log & Crash Search 서비스로 이동하여 로그를 확인할 수 있습니다.
+- 로그 관리 항목에서 **Log & Crash Search** 버튼을 클릭해 Log & Crash Search 서비스로 이동하여 로그를 확인할 수 있습니다.
 
 ### 함수 버전 관리
 ![console-guide-XX]()
